@@ -1,0 +1,22 @@
+{
+  "name": "blogapi_backend_expressjs_odinproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "copy": "copyfiles package.json package-lock.json dist",
+    "dev": " tsc -w & nodemon dist/app",
+    "build": "npx tsc & copyfiles package.json package-lock.json dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.5.2"
+  }
+}
