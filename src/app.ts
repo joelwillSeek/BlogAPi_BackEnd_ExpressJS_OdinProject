@@ -28,7 +28,8 @@ app.use("/post", postRoutes);
 app.use("/signUp", signUpRoutes);
 app.use("/logIn", logInRoutes);
 
-// app.listen(PORT).on("error", (error: any) => {
+app.listen(PORT);
+//.on("error", (error: any) => {
 //   if (error.code == "EADDRINUSE") {
 //     const oldPort = PORT;
 //     const newPort = ++PORT;
