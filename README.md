@@ -44,10 +44,10 @@ git clone https://github.com/joelwillSeek/BlogAPi_BackEnd_ExpressJS_OdinProject
 npm install
 ```
 
-<li>To configure if necessary in globalsettings.ts</li>
+<li>To configure if necessary in mongoConnection.ts</li>
 
 ```typescript
-const uri="URL"
+const uri=process.env.MONGO_URI
 ```
 
 <li>To run development</li>
