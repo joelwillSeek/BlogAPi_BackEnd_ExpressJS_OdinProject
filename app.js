@@ -9,7 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const passport_1 = __importDefault(require("passport"));
 const passportConfig_1 = require("./passportConfig");
 const routesManager_1 = require("./routes/routesManager");
-let PORT = parseInt(process.env.PORT || "3001");
+let PORT = process.env.PORT;
 const app = (0, express_1.default)();
 // opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
 // opts.secretOrKey = 'secret';
@@ -26,14 +26,12 @@ passport_1.default.use(passportConfig_1.strategy);
 app.use("/post", routesManager_1.postRoutes);
 app.use("/signUp", routesManager_1.signUpRoutes);
 app.use("/logIn", routesManager_1.logInRoutes);
-console.log("3001");
-app.listen(PORT).on("error", (error) => {
-    if (error.code == "EADDRINUSE") {
-        const oldPort = PORT;
-        const newPort = ++PORT;
-        console.log("Server port " + oldPort + " is taken changing to " + newPort);
-    }
-    else {
-        console.log("Server Error: " + error);
-    }
-});
+// app.listen(PORT).on("error", (error: any) => {
+//   if (error.code == "EADDRINUSE") {
+//     const oldPort = PORT;
+//     const newPort = ++PORT;
+//     console.log("Server port " + oldPort + " is taken changing to " + newPort);
+//   } else {
+//     console.log("Server Error: " + error);
+//   }
+// });
