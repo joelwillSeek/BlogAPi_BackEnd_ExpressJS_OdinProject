@@ -15,7 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     const devUrl = "mongodb://127.0.0.1:27017/Blog?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6";
-    yield mongoose_1.default.connect(devUrl);
+    yield mongoose_1.default.connect(process.env.MONGO_URI || "");
 });
 const db = mongoose_1.default.connection;
 db.on("connected", () => console.log("Mongodb Connected"));

@@ -5,7 +5,7 @@ import passport from "passport";
 import { strategy } from "./passportConfig";
 import { logInRoutes, signUpRoutes, postRoutes } from "./routes/routesManager";
 
-let PORT: number = parseInt(process.env.PORT || "3001");
+let PORT = process.env.PORT;
 
 const app = express();
 
@@ -28,14 +28,12 @@ app.use("/post", postRoutes);
 app.use("/signUp", signUpRoutes);
 app.use("/logIn", logInRoutes);
 
-console.log("3001");
-
-app.listen(PORT).on("error", (error: any) => {
-  if (error.code == "EADDRINUSE") {
-    const oldPort = PORT;
-    const newPort = ++PORT;
-    console.log("Server port " + oldPort + " is taken changing to " + newPort);
-  } else {
-    console.log("Server Error: " + error);
-  }
-});
+// app.listen(PORT).on("error", (error: any) => {
+//   if (error.code == "EADDRINUSE") {
+//     const oldPort = PORT;
+//     const newPort = ++PORT;
+//     console.log("Server port " + oldPort + " is taken changing to " + newPort);
+//   } else {
+//     console.log("Server Error: " + error);
+//   }
+// });
