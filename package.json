@@ -8,7 +8,7 @@
     "build": "tsc && copyfiles package.json ./dist && copyfiles package-lock.json ./dist",
     "serve": "node dist/app.js",
     "dev": "nodemon src/app.ts",
-    "live": "git subtree push --prefix=dist origin gh-pages"
+    "live": "git subtree push --prefix=dist upload gh-pages"
   },
   "keywords": [],
   "author": "",
