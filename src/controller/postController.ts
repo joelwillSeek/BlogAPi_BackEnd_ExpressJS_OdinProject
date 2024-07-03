@@ -40,7 +40,7 @@ export async function postController_deletePostComment(
       console.log("Comment Deleted");
       const responseOfPost = await postModels.updateOne(
         { _id: postID },
-        { $pull: { allCommentsMade: `ObjectId('${commentID}')` } }
+        { $pull: { allCommentsMade: commentID } }
       );
       if (responseOfPost.matchedCount <= 0) return res.sendStatus(404);
       return res.sendStatus(200);
