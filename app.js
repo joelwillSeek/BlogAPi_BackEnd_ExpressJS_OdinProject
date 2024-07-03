@@ -26,7 +26,8 @@ passport_1.default.use(passportConfig_1.strategy);
 app.use("/post", routesManager_1.postRoutes);
 app.use("/signUp", routesManager_1.signUpRoutes);
 app.use("/logIn", routesManager_1.logInRoutes);
-// app.listen(PORT).on("error", (error: any) => {
+app.listen(PORT);
+//.on("error", (error: any) => {
 //   if (error.code == "EADDRINUSE") {
 //     const oldPort = PORT;
 //     const newPort = ++PORT;
